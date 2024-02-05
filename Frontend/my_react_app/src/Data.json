@@ -1,0 +1,93 @@
+
+[
+    {
+        "id":0,
+        "Name":" IIT Bombay",
+        "Location":"Mumbai, Maharashtra",
+        "AveragePackage":"INR 20-25 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"550 acres",
+        "Ranking":"1"
+},
+    {
+        "id":1,
+        "Name":"IIT Delhi",
+        "Location":"New Delhi",
+        "AveragePackage":"INR 18-23 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"320 acres",
+        "Ranking":"2"
+    },
+    {
+        "id":2,
+        "Name":"IIT Madras",
+        "Location":"Chennai, Tamil Nadu",
+        "AveragePackage":"INR 16-21 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"250 acres",
+        "Ranking":"3"
+    },
+    {
+        "id":3,
+        "Name":"IIT Kharagpur",
+        "Location":"Kharagpur, West Bengal",
+        "AveragePackage":"INR 15-20 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"2,100 acres",
+        "Ranking":"4"
+},
+    {
+        "id":4,
+        "Name":"IIT Kanpur",
+        "Location":"Kanpur, Uttar Pradesh",
+        "AveragePackage":" INR 16-21 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"1,080 acres",
+        "Ranking":"5"
+    },
+    {
+        "id":5,
+        "Name":"IIT Roorkee",
+        "Location":"Roorkee, Uttarakhand",
+        "AveragePackage":"INR 14-19 LPA ",
+        "placementRates":"90-95%",
+        "CampusSize":"365 acres",
+        "Ranking":"6"
+    },
+    {
+        "id":6,
+        "Name":"IIT Guwahati",
+        "Location":"Guwahati, Assam",
+        "AveragePackage":"INR 12-17 LPA",
+        "placementRates":"90-95%",
+        "CampusSize":"700 acres",
+        "Ranking":"7"
+    },
+    {
+        "id":7,
+        "Name":"IIT Ropar",
+        "Location":"Rupnagar, Punjab",
+        "AveragePackage":"INR 13-18 LPA",
+        "placementRates":"80-90%",
+        "CampusSize":"500 acres",
+        "Ranking":"8"
+    },
+    {
+        "id":8,
+        "Name":"IIT Bhubaneswar",
+        "Location":"Bhubaneswar, Odisha",
+        "AveragePackage":"INR 12-17 LPA",
+        "placementRates":"80-90%",
+        "CampusSize":"935 acres",
+        "Ranking":"9"
+    },
+    {
+        "id":9,
+        "Name":"IIT Gandhinagar",
+        "Location":"Gandhinagar, Gujarat",
+        "AveragePackage":"INR 13-18 LPA",
+        "placementRates":"80-90%",
+        "CampusSize":"400 acres",
+        "Ranking":"10"
+    }
+]
