@@ -13,7 +13,7 @@ function App() {
     <>
       {/* <SignUpForm/> */}
       <CollegeList/>
-      <Usepropes collegeName={"IIT Kanpur"} Reanking={"1"}/>
+      {/* <Usepropes collegeName={"IIT Kanpur"} Reanking={"1"}/> */}
     </>
   )
 }

@@ -1,32 +1,51 @@
 // feaching my data
-import Data from "../Data"
+
 import "./CollegeList.css"
-
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
 
 function CollegeList() {
-    console.log(Data)
-  return (
+    const[college,setcollege]=useState([])
+    
+    useEffect(()=>{
+        axios.get('http://localhost:200')
+        .then((res)=>{
+          setcollege(res.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      },[]);
+      return (
         <div>
-            {
-                Data && Data.map(data =>{
-                    return(
-                        <>
-                        <div key={data.id} className="CollegeList">
-                                Name : {data.Name} <br/>
-                                Location : {data.Location}<br/>
-                                AveragePackage : {data.AveragePackage}<br/>
-                                placement Rates : {data.placementRates}<br/>
-                                Campus Size : {data.CampusSize}<br/>
-                                Ranking : {data.Ranking}<br/>
-                        </div>
-                        </>
-                    )
-                })
-            }
-        </div>
-      )
+    <h1>College List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Average Package</th>
+                <th>Placement Rates</th>
+                <th>Campus Size</th>
+                <th>Ranking</th>
+            </tr>
+        </thead>
+        <tbody>
+            {college.map((collegeData) => (
+                <tr key={collegeData.id}>
+                    <td>{collegeData.Name}</td>
+                    <td>{collegeData.Location}</td>
+                    <td>{collegeData.AveragePackage}</td>
+                    <td>{collegeData.placementRates}</td>
+                    <td>{collegeData.CampusSize}</td>
+                    <td>{collegeData.Ranking}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
+    );
 }
 
-export default CollegeList
+export default CollegeList;
