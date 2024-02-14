@@ -5,6 +5,7 @@ import './App.css'
 import SignUpForm from './component/SignUpForm'
 import CollegeList from './component/CollegeList'
 import Usepropes from './component/usepropes'
+import Form from './component/Form'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,8 +13,9 @@ function App() {
   return (
     <>
       {/* <SignUpForm/> */}
-      <CollegeList/>
-      {/* <Usepropes collegeName={"IIT Kanpur"} Reanking={"1"}/> */}
+      {/* <CollegeList/> */}
+      {/* <Usepropes collegeName={"IIT Kanpur"} Reanking={"3"}/> */}
+      <Form/>
     </>
   )
 }
