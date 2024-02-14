@@ -1,14 +1,14 @@
-body {
+/* body { */
     /* Set a background image for the entire page */
     /* background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
-    background-size: cover; /* Adjust to your needs */
-    background-position: center; /* Adjust to your needs */
-    margin: 0; /* Remove default margin */
-     font-family: 'Arial', sans-serif;
+    /* background-size: cover; /* Adjust to your needs */
+    /* background-position: center; Adjust to your needs */
+    /* margin: 0; Remove default margin */ 
+     /* font-family: 'Arial', sans-serif; */
     /* Use your preferred font  */
-    background-repeat:no-repeat;
-   }
-   #boder{
+    /* background-repeat:no-repeat;
+   } */
+   /* #boder{
     border: 1px solid #000000;
     background-color:antiquewhite;
    }
@@ -48,5 +48,5 @@ body {
       } 
       button:hover {
         background-color: #45a049;
-      }
+      } */
         

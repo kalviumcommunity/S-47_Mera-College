@@ -9,13 +9,12 @@ function CollegeList() {
     
     useEffect(()=>{
         axios.get('http://localhost:200')
-        .then((res)=>{
-          setcollege(res.data)
-        })
+        .then(res => setcollege(res.data) )
         .catch((error) => {
           console.log(error)
         })
       },[]);
+
       return (
         <div>
     <h1>College List</h1>
@@ -31,7 +30,7 @@ function CollegeList() {
             </tr>
         </thead>
         <tbody>
-            {college.map((collegeData) => (
+            {college.map((collegeData , index) => (
                 <tr key={collegeData.id}>
                     <td>{collegeData.Name}</td>
                     <td>{collegeData.Location}</td>
@@ -49,3 +48,5 @@ function CollegeList() {
 }
 
 export default CollegeList;
+
+
