@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignUpForm.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const SignUpForm = () => {
@@ -9,12 +9,12 @@ const SignUpForm = () => {
  const [lastName, setLastName] = useState('');
  const [email, setEmail] = useState('');
  const [mobileNumber, setMobileNumber] = useState('');
+ const navigate = useNavigate();
 
 
  // Function to handle form submission
  const handleSignUp = () => {
    console.log('User Details:', { firstName, lastName, email, mobileNumber });
- 
  };
 
 

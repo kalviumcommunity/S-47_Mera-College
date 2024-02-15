@@ -5,6 +5,7 @@ const port = 200
 const URL = 'mongodb+srv://mayur:mayurgupta2004@cluster0.qvdmxxy.mongodb.net/?retryWrites=true&w=majority'
 const cors = require('cors')
 const model = require('./model')
+const { validateSignup } = require('./Validation')
 
 app.use(express.json())
 
@@ -67,6 +68,18 @@ app.put('/update/:id', (req, res) => {
    .then(users => res.json(users))
    .catch(err => console.log(err))
  })
+
+
+//joi
+app.post("/signup",(req,res)=>{
+  const{error,value} = validateSignup(req.body);
+  if (error) {
+    console.log(error.details);
+    return res.status(400).send(error.details.message)
+  } 
+  res.send("successfully signed up")
+})
+
 
 app.listen(port, () => {
   console.log(`server at http://localhost:${port}`)
