@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SignUpForm.css';
+import { Link } from 'react-router-dom';
 
 
 const SignUpForm = () => {
@@ -66,10 +67,9 @@ const SignUpForm = () => {
        </label>
        <br />
 
-
-       <button type="button" onClick={handleSignUp}>
-         Sign Up
-       </button>
+        <Link to="/college">
+        <button type="button" onClick={handleSignUp}>Sign Up</button>
+        </Link>
      </form>
    </div>
  );

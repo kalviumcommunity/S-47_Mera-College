@@ -1,0 +1,37 @@
+body{
+    background-image: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-2560x2560-8324.png");
+}
+.heading{
+    color: rgb(210, 205, 199);
+    text-align: center;
+    font-size: 90px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 170px;
+}
+
+.heading2{
+    color: rgb(214, 125, 125);
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn{
+    background-color: rgb(114, 111, 111);
+    color: white;
+    padding: 15px 32px;
+    /* text-align: center; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 620px;
+    border-radius: 10px;
+    height: 50px;
+    width: 150px;
+}
