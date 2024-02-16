@@ -11,6 +11,7 @@ app.use(express.json())
 
 app.use(cors())
 
+const users = []
 
 mongoose.connect(URL,{dbName:'mera-college'})
 
@@ -70,13 +71,21 @@ app.put('/update/:id', (req, res) => {
  })
 
 
+
+ app.get('/users',(req,res)=>{
+  res.json(users)
+ })
+
 //joi
 app.post("/signup",(req,res)=>{
-  const{error,value} = validateSignup(req.body);
-  if (error) {
-    console.log(error.details);
-    return res.status(400).send(error.details.message)
-  } 
+  // const{error,value} = validateSignup(req.body);
+  const validateobject = validateSignup(req.body);
+
+  if (validateobject.error) {
+    // console.log(error.details);
+    return res.status(400).send(validateobject.error)
+  }
+  users.push(validateobject.value) 
   res.send("successfully signed up")
 })
 
