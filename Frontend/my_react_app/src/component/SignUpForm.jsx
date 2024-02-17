@@ -14,7 +14,7 @@ const SignUpForm = () => {
 //  const navigate = useNavigate();
 
 
- // Function to handle form submission
+ // Function to handle form submission and cookis
  const handleSignUp = (e) => {
   e.preventDefault()
    console.log('User Details:', { firstName, lastName, email, mobileNumber });

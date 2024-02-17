@@ -10,7 +10,7 @@ function CollegeList() {
     
     useEffect(()=>{
         axios.get('http://localhost:200')
-        .then(res => setcollege(res.data) )
+            .then(res => setcollege(res.data) )
         .catch((error) => {
           console.log(error)
         })
