@@ -34,4 +34,9 @@ tr{
 .container{
     background-color:hsl(0, 0%, 50%);
 }
-
+.btn-1{
+    margin-left: 50px;
+}
+.btn-4{
+    margin-left: 1150px;
+}

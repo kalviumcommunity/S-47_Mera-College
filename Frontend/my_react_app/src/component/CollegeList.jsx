@@ -4,6 +4,7 @@ import "./CollegeList.css"
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { Link } from "react-router-dom"
+import Cookies from 'js-cookie';
 function CollegeList() {
     const[college,setcollege]=useState([])
     
@@ -26,11 +27,20 @@ function CollegeList() {
 
 
 
+      const hendelSingOut = () =>{
+        Cookies.remove('firstName')
+        Cookies.remove('lastName')
+        Cookies.remove('email')
+        Cookies.remove('mobileNumber')
+      }
+
+
 
       return (
         <div className="container">
     <h1 className="title">College List</h1>
-    <Link to={"/create"}><button className="btn-1">Create</button></Link>
+    <Link to={"/create"}><button className="btn-4">Create</button></Link>
+    <Link to={"/"}><button className="btn-1" onClick={hendelSingOut}>Sing Out</button></Link>
     <hr/>
     <table>
         <thead>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './SignUpForm.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Cookie from 'js-cookie';
+
 
 
 const SignUpForm = () => {
@@ -9,13 +11,22 @@ const SignUpForm = () => {
  const [lastName, setLastName] = useState('');
  const [email, setEmail] = useState('');
  const [mobileNumber, setMobileNumber] = useState('');
- const navigate = useNavigate();
+//  const navigate = useNavigate();
 
 
  // Function to handle form submission
- const handleSignUp = () => {
+ const handleSignUp = (e) => {
+  e.preventDefault()
    console.log('User Details:', { firstName, lastName, email, mobileNumber });
+   Cookie.set('firstName', firstName);
+   Cookie.set('lastName', lastName);
+   Cookie.set('email', email);
+   Cookie.set('mobileNumber', mobileNumber);
+   console.log(document.cookie);
  };
+
+
+
 
 
  return (
@@ -67,9 +78,9 @@ const SignUpForm = () => {
        </label>
        <br />
 
-        <Link to="/college">
-        <button type="button" onClick={handleSignUp}>Sign Up</button>
-        </Link>
+        {/* <Link to="/college"> */}
+      <button type="button" onClick={(e)=>handleSignUp(e)}>Sign Up</button>
+        {/* </Link> */}
      </form>
    </div>
  );

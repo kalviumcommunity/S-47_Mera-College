@@ -27,7 +27,7 @@ mongoose.connect(URL,{dbName:'mera-college'})
   console.log(err)
 })
 
-
+//create
 mongoose.connect(URL,{dbName:'mera-college'})
 .then(()=>{
   console.log('Connected');
@@ -45,7 +45,7 @@ mongoose.connect(URL,{dbName:'mera-college'})
 })
 
 
-//app put
+//app update
 app.get('/update/:id', (req, res) => {
   const id =req.params.id;
   model.findById({_id:id})
@@ -93,9 +93,6 @@ app.post("/signup",(req,res)=>{
 app.listen(port, () => {
   console.log(`server at http://localhost:${port}`)
 });
-
-
-
 
 
 
