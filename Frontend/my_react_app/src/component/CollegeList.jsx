@@ -3,21 +3,45 @@
 import "./CollegeList.css"
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
-
+import { Link } from "react-router-dom"
+import Cookies from 'js-cookie';
 function CollegeList() {
     const[college,setcollege]=useState([])
     
     useEffect(()=>{
         axios.get('http://localhost:200')
-        .then(res => setcollege(res.data) )
+            .then(res => setcollege(res.data) )
         .catch((error) => {
           console.log(error)
         })
       },[]);
 
+      const hendelDelete = (id) =>{
+        axios.delete(`http://localhost:200/delete/${id}`)
+        window.location.reload()
+        .then(res => console.log(res))
+        .catch((error) => {
+          console.log(error)
+        })
+      }
+
+
+
+      const hendelSingOut = () =>{
+        Cookies.remove('firstName')
+        Cookies.remove('lastName')
+        Cookies.remove('email')
+        Cookies.remove('mobileNumber')
+      }
+
+
+
       return (
-        <div>
-    <h1>College List</h1>
+        <div className="container">
+    <h1 className="title">College List</h1>
+    <Link to={"/create"}><button className="btn-4">Create</button></Link>
+    <Link to={"/"}><button className="btn-1" onClick={hendelSingOut}>Sing Out</button></Link>
+    <hr/>
     <table>
         <thead>
             <tr>
@@ -29,6 +53,7 @@ function CollegeList() {
                 <th>Ranking</th>
             </tr>
         </thead>
+        {/* <hr/> */}
         <tbody>
             {college.map((collegeData , index) => (
                 <tr key={collegeData.id}>
@@ -38,12 +63,15 @@ function CollegeList() {
                     <td>{collegeData.placementRates}</td>
                     <td>{collegeData.CampusSize}</td>
                     <td>{collegeData.Ranking}</td>
+                    <Link to={`/update/${collegeData._id}`}><button className="btn-2">Update</button></Link>
+                    <button className="btn-3" onClick={(e)=>hendelDelete(collegeData._id)}>Delete</button>
                 </tr>
             ))}
         </tbody>
-    </table>
-</div>
 
+    </table>
+    <hr />
+</div>
     );
 }
 
