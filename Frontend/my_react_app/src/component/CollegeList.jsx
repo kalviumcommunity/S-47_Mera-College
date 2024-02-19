@@ -32,6 +32,7 @@ function CollegeList() {
         Cookies.remove('lastName')
         Cookies.remove('email')
         Cookies.remove('mobileNumber')
+        Cookies.remove('token')
       }
 
 

@@ -6,11 +6,10 @@ const URL = 'mongodb+srv://mayur:mayurgupta2004@cluster0.qvdmxxy.mongodb.net/?re
 const cors = require('cors')
 const model = require('./model')
 const { validateSignup } = require('./Validation')
+const jwt=require('jsonwebtoken')
 
 app.use(express.json())
-
 app.use(cors())
-
 const users = []
 
 mongoose.connect(URL,{dbName:'mera-college'})
@@ -77,22 +76,47 @@ app.put('/update/:id', (req, res) => {
  })
 
 //joi
-app.post("/signup",(req,res)=>{
-  // const{error,value} = validateSignup(req.body);
+// app.post("/signup",(req,res)=>{
+//   // const{error,value} = validateSignup(req.body);
+//   const validateobject = validateSignup(req.body);
+
+  
+
+//   if (validateobject.error) {
+//     // console.log(error.details);
+//     return res.status(400).send(validateobject.error)
+//   }
+
+//   users.push(validateobject.value) 
+//   res.send("successfully signed up")
+// })
+
+
+app.post("/signup", (req, res) => {
   const validateobject = validateSignup(req.body);
+  console.log(req.body)
+
+  const secret = "MayurGupta";
+  const token = jwt.sign({ data: req.body }, secret, { expiresIn: '30min' });
+  console.log(token);
+  res.json({token: token})
 
   if (validateobject.error) {
-    // console.log(error.details);
-    return res.status(400).send(validateobject.error)
-  }
-  users.push(validateobject.value) 
-  res.send("successfully signed up")
-})
+    return res.status(400).send(validateobject.error);
+  } 
 
+  users.push(validateobject.value);
+  res.json({message: "successfully signed up", token: token});
+
+ 
+});
 
 app.listen(port, () => {
-  console.log(`server at http://localhost:${port}`)
+  console.log(`server at http://localhost:${port}`);
 });
+
+
+
 
 
 
