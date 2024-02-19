@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import Cookies from 'js-cookie';
 function CollegeList() {
     const[college,setcollege]=useState([])
+    const [sort,setSort] = useState('All')
     
     useEffect(()=>{
         axios.get('http://localhost:200')
@@ -32,15 +33,34 @@ function CollegeList() {
         Cookies.remove('lastName')
         Cookies.remove('email')
         Cookies.remove('mobileNumber')
+        Cookies.remove('token')
       }
 
-
+      const HandleSort=(e)=>{
+        console.log(e.target.value)
+        setSort(e.target.value)
+    
+      }
+      const filter = sort === 'ALL'? college: college.filter((data)=>data.Location === sort)
 
       return (
         <div className="container">
     <h1 className="title">College List</h1>
     <Link to={"/create"}><button className="btn-4">Create</button></Link>
     <Link to={"/"}><button className="btn-1" onClick={hendelSingOut}>Sing Out</button></Link>
+    <select value={sort} onChange={HandleSort}>
+      <option value="ALL">ALL</option>
+      <option value="Mumbai, Maharashtra">Mumbai, Maharashtra</option>
+      <option value="New Delhi">New Delhi</option>
+      <option value="Chennai, Tamil Nadu">Chennai, Tamil Nadu</option>
+      <option value="Kharagpur, West Bengal">Kharagpur, West Bengal</option>
+      <option value="Kanpur, Uttar Pradesh">Kanpur, Uttar Pradesh</option>
+      <option value="Roorkee, Uttarakhand">Roorkee, Uttarakhand</option>
+      <option value="Guwahati, Assam">Guwahati, Assam</option>
+      <option value="Rupnagar, Punjab">Rupnagar, Punjab</option>
+      <option value="Bhubaneswar, Odisha">Bhubaneswar, Odisha</option>
+      <option value="Gandhinagar, Gujarat">Gandhinagar, Gujarat</option>
+    </select> 
     <hr/>
     <table>
         <thead>
@@ -55,7 +75,7 @@ function CollegeList() {
         </thead>
         {/* <hr/> */}
         <tbody>
-            {college.map((collegeData , index) => (
+            {filter.map((collegeData , index) => (
                 <tr key={collegeData.id}>
                     <td>{collegeData.Name}</td>
                     <td>{collegeData.Location}</td>
